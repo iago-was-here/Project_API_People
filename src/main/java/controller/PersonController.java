@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import dto.MessageResponseDTO;
 import dto.request.PersonDTO;
+import entity.Person;
 import service.PersonService;
 
 @RestController
@@ -37,7 +38,7 @@ public class PersonController {
 	}
 	
 	@GetMapping
-	public List<PersonDTO> listAll(){
+	public List<Person> listAll(){
 		return personService.listALL();
 	}
 }
