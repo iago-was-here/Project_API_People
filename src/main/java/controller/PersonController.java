@@ -45,8 +45,8 @@ public class PersonController {
 		return personService.listALL();
 	}
 	
-	@GetMapping("/{id}")
-	public Optional<Person> findByID(@PathVariable Long id) throws PersonNotFounException {
-		return personService.findById(id);
-	}
+	/*
+	 * @GetMapping("/{id}") public Optional<Person> findByID(@PathVariable Long id)
+	 * throws PersonNotFounException { return personService.findById(id); }
+	 */
 }

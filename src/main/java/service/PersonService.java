@@ -34,11 +34,10 @@ public class PersonService {
 		return Everyone;
 	}
 	
-	public Optional<Person> findById(Long id) throws PersonNotFounException {
-		Optional<Person> optionalPerson =  personRepository.findById(id);
-		if(optionalPerson.isEmpty()) {
-			throw new PersonNotFounException(id);
-		}
-		return optionalPerson;
+	//public Optional<Person> findById(Long id) throws PersonNotFounException {
+		//Optional<Person> optionalPerson =  personRepository.findById(id);
+		//if(optionalPerson.isEmpty()) {
+		//	throw new PersonNotFounException(id);
+		//}
+		//return optionalPerson;
 	}
-}
