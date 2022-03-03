@@ -33,7 +33,7 @@ public class PersonService {
 		List<Person> Everyone = personRepository.findAll();
 		return Everyone;
 	}
-
+	
 	public Optional<Person> findById(Long id) throws PersonNotFounException {
 		Optional<Person> optionalPerson =  personRepository.findById(id);
 		if(optionalPerson.isEmpty()) {
