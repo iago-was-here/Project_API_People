@@ -1,6 +1,7 @@
 package service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import dto.MessageResponseDTO;
 import dto.request.PersonDTO;
 import entity.Person;
+import exception.PersonNotFounException;
 import repository.PersonRepository;
 
 @Service
@@ -30,5 +32,13 @@ public class PersonService {
 	public List<Person> listALL() {
 		List<Person> Everyone = personRepository.findAll();
 		return Everyone;
+	}
+
+	public Optional<Person> findById(Long id) throws PersonNotFounException {
+		Optional<Person> optionalPerson =  personRepository.findById(id);
+		if(optionalPerson.isEmpty()) {
+			throw new PersonNotFounException(id);
+		}
+		return optionalPerson;
 	}
 }
